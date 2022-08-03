@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  app:
+    image: node-server
+    build:
+      context: .
+      args:
+        - "PORT:5000"
+    volumes:
+      - ./:/src/app
+    container_name: medical_server
+    ports:
+      - "5000:5000"
+
+    restart: always
